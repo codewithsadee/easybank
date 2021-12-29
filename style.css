@@ -1,0 +1,188 @@
+/*-----------------------------------*\ 
+  #style.css
+\*-----------------------------------*/
+
+/**
+ * copyright 2021 @codewithsadee 
+ */
+
+
+
+
+
+/*-----------------------------------*\ 
+  #VARIABLE
+\*-----------------------------------*/
+
+:root {
+
+  /**
+   * colors 
+   */
+
+  --light-grayish-blue: hsl(220, 16%, 96%);
+  --very-light-gray:    hsl(0, 0%, 98%);
+  --grayish-blue:       hsl(233, 8%, 62%);
+  --bright-cyan:        hsl(192, 70%, 51%);
+  --lime-green:         hsl(136, 65%, 51%);
+  --dark-blue:          hsl(233, 26%, 24%);
+  --white:              hsl(0, 0%, 100%);
+
+}
+
+
+
+
+
+/*-----------------------------------*\ 
+  #RESET
+\*-----------------------------------*/
+
+*, *::before, *::after {
+  margin:  0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li { list-style: none; }
+
+a { text-decoration: none; }
+
+button {
+  border: none;
+  background: none;
+  font: inherit;
+  cursor: pointer;
+}
+
+html {
+  font-family: 'Public Sans', sans-serif;
+  font-size: 18px;
+  overflow-y: scroll;
+}
+
+img, span { display: block; }
+
+
+
+
+
+/*-----------------------------------*\ 
+  #MAIN
+\*-----------------------------------*/
+
+.container {
+  max-width: 1440px;
+  margin: auto;
+}
+
+
+
+
+/*-----------------------------------*\ 
+  #HEADER
+\*-----------------------------------*/
+
+header { 
+  position: fixed; 
+  top:  0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.navbar {
+  background: var(--white);
+  display:         flex;
+  justify-content: space-between;
+  align-items:     center;
+  padding: 20px;
+}
+
+.navbar-brand img { 
+  width: 140px; 
+  display: block;
+}
+
+.navbar-toggle-btn {
+  display:        flex;
+  flex-direction: column;
+  gap: 4px;
+  transition: 0.25s ease;
+}
+
+.navbar-toggle-btn span {
+  display: block;
+  width:  25px;
+  height: 1px;
+  background: var(--dark-blue);
+}
+
+.navbar-toggle-btn.active .one { transform: rotate(45deg) translateY(3px); }
+.navbar-toggle-btn.active .two { display: none; }
+.navbar-toggle-btn.active .three { transform: rotate(-45deg) translateY(-3px); }
+
+
+.navbar-nav {
+  position: fixed;
+  background: var(--white);
+  top:   calc(60px + 20px);
+  left:  20px;
+  right: 20px;
+  text-align: center;
+  padding: 20px 0;
+  border-radius: 5px;
+  border: 1px solid;
+  z-index: -1;
+  display: none;
+}
+
+.navbar-nav a {
+  color: var(--dark-blue);
+  display: block;
+  padding: 10px 0;
+}
+
+.navbar-nav.active { display: block; }
+
+
+
+
+
+/*-----------------------------------*\ 
+  #BANNER
+\*-----------------------------------*/
+
+.banner { background: var(--very-light-gray); }
+
+.banner-img-box {
+  height: 380px;
+  background: url(./images/bg-intro-mobile.svg);
+  background-position: top;
+  background-repeat: no-repeat;
+  padding: 0 15px;
+}
+
+.banner-img-box .banner-img {
+  object-fit: cover;
+  object-position: 0 -60px;
+}
+
+.banner-title {
+  font-size: 38px;
+  font-weight: 500;
+  color: var(--dark-blue);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.banner-text {
+  max-width: 340px;
+  margin: auto;
+  color: var(--grayish-blue);
+  text-align: center;
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
